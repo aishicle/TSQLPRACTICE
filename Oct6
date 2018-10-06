@@ -1,0 +1,13 @@
+create table departmentAish
+(
+deptID int primary key,
+deptName varchar (max)
+)
+
+create table employeeAish 
+(
+id int,
+name varchar (max),
+age int,
+deptID int foreign key references departmentAish(deptID)
+)
