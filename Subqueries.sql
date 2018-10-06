@@ -37,8 +37,19 @@ where deptID = (Select deptID from employeesA where name = 'Jay')
 
 --in operator (gives you a set of values)
 Select * from employeesA
-where salary in (Select salary from employeesA where salary > 15000)
+where salary IN (Select salary from employeesA where salary > 15000)
 
 --exists (checks whether data exists or not)
 Select * from employeesA
-where exists (Select * from departmentA where deptID = 5)
+where EXISTS (Select * from departmentA where deptID = 5)
+
+--if statement
+IF exists (Select * from employeesA where name = 'mangesh')
+begin
+	print 'exists'
+end
+else 
+begin
+	print 'no user found'
+end
+
